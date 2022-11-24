@@ -3,7 +3,7 @@ const sequelize = require('../config/connection');
 
 class Project extends Model {}
 
-Project.init(
+Project.init()
  
 
 module.exports = Project;
