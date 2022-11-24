@@ -1,3 +1,5 @@
+// Get the video
+var video = document.getElementById("myVideo");
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
