@@ -27,6 +27,7 @@ router.get('/', async (req, res) => {
   }
 });
 
+//get barbers by name and Join them by with a user name
 router.get('/barber/:id', async (req, res) => {
   try {
     const barberData = await Barber.findByPk(req.params.id, {

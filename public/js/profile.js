@@ -8,7 +8,7 @@ const newFormHandler = async (event) => {
     if (barberName && haircutPrice && haircutType) {
       const response = await fetch(`/api/barbers`, {
         method: 'POST',
-        body: JSON.stringify({ barberName, haircutPrice, haircutType }),
+        body: JSON.stringify({ barberName, haircutPrice, haircutType}),
         headers: {
           'Content-Type': 'application/json',
         },
