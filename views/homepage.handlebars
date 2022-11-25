@@ -1,3 +1,24 @@
-<div>
-  <p>Homepage</p>
+<!-- Loop over each object in the appointment array -->
+{{#each barbers as |barber| }}
+<div class="row mb-4 project">
+  <div class="col-md-5">
+    <h2>
+      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
+      {{{get_emoji}}}
+      <a href="/barber/{{barber.id}}">{{barber.barber_name}}</a>
+    </h2>
+    <p>
+      <span for="img" aria-label="money">💲</span>
+      <!-- Pass needed_funding value to the helper function -->
+      <span class="dollar-amount">{{format_amount barber.haircut_price}}</span>
+      needed!
+    </p>
+    <p>Created by {{barber.user.name}} on {{format_date barber.date_created}}</p>
+  </div>
+  <div class="col-md-7">
+    <p>
+      {{barber.haircut_type}}
+    </p>
+  </div>
 </div>
+{{/each}}
