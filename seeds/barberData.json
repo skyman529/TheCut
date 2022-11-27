@@ -1,0 +1,27 @@
+[
+    {
+      "barber_name": "Eugene",
+      "haircut_type": "Bold with a beard Trim.",
+      "haircut_price": 60
+    },
+    {
+     
+        "barber_name": "Skyler",
+        "haircut_type:": "low fade.",
+        "haircut_price": 35
+    },
+    {
+      
+        "barber_name": "Valeryo",
+        "haircut_type": "Side taper with beard treatment.",
+        "haircut_price": 65
+    },
+
+    {
+      
+        "barber_name": "Alex",
+        "haircut_type": "High fade with line up",
+        "haircut_price": 50
+    }
+  ]
+  
