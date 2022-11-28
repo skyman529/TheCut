@@ -17,7 +17,7 @@ const newFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/profile');
       } else {
-        alert('Failed to create appointment');
+        alert('Failed to create an appointment');
       }
     }
   };
@@ -33,7 +33,7 @@ const newFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/profile');
       } else {
-        alert('Failed to delete appointment');
+        alert('Failed to delete an appointment');
       }
     }
   };
