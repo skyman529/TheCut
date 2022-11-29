@@ -5,8 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TheCut!</title>
-  <link rel="stylesheet" href="/public/css/style.css">
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+   <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/style.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./Assets/style.css" >
   <link rel="stylesheet" href="/resources/demos/style.css">
 </head>
 <!-- The video -->
@@ -15,12 +19,12 @@
   </video>  
 
 <body>
-  <div class="">
-    <header class="">
-      <h1>
-        <span role="img" aria-label="CUT">✂️</span>
-        <a href="/">Book An appointment!</a>
-      </h1>
+    <header class="jumbotron jumbotron-fluid custom-jumbotron">
+    <div class="container text-center">
+      <h1>Appointment Scheduler</h1>
+      <h2>Current Time &amp; Date: <br /> <span id="time-display">00:00:00</span></h2>
+    </div>
+  </header>
       <nav>
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
@@ -34,16 +38,20 @@
     <!-- anything from on and up stays-->
 
 
-    <main class="container contianer-fluid m-5">
-<!--Main is being rander from the homepage and profile-->
+     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
     <footer>
+
       
     </footer>
   </div>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
