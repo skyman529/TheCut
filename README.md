@@ -3,6 +3,8 @@ Haircut appointment app
 
 ## Description
 This app will help Barbershops/Beauty Salons book and manage appointments. Users can log in and request appointments on specific days from specific barbers and hair styliests. End users will need to log in and create a profile with a username and password.
+  
+## Acceptance Criteria
 
 GIVEN a hairstylist management application
 WHEN I open the TheCut
@@ -13,8 +15,6 @@ WHEN I click hairstyles
 THEN I am presented with different hairstyles to choose from
 WHEN I request appointments
 THEN the new appointment request I have entered is saved
-  
-## Acceptance Criteria
   
 ## Table of Contents
   * [Installation](#installation)
