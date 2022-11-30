@@ -1,12 +1,10 @@
+
 <div class="row">
   <div class="col-auto">
     <h2>Welcome, {{name}}!</h2>
   </div>
 </div>
 
-
-
-    <form class="form new-barber-form">
   <main class="container-fluid">
     <div class="row">
       <section class="col-12 col-md-4 col-lg-3">
@@ -19,34 +17,34 @@
               Click the button below to open a form and provide information for the following:
             </div>
           </div>
+
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Type of a haircut</li>
-            <li class="list-group-item">Available barbers</li>
-            <li class="list-group-item">Date</li>
-            <li class="list-group-item">Rates</li>
+            <li class="list-group-item">Available Barbers</li>
+            <li class="list-group-item">Available Service</li>
+            <li class="list-group-item">Price per Haircut</li>
+            <li class="list-group-item">Select Time and Date</li>
           </ul>
 
              <div class="card-footer">
-            <button class="btn btn-block custom-btn" data-toggle="modal" data-target="#project-modal">Schedule Appoint</button>
+            <button class="btn btn-block custom-btn" data-toggle="modal" data-target="#barber-modal">Schedule Appoint</button>
           </div>
         </div>
       </section>
 
+      
       <section class="col-12 col-md-8 col-lg-9">
         <div class="table-responsive">
           <table class="table table-bordered custom-table">
             <thead>
               <tr>
-                <th scope="col">Type of a hair</th>
-                <th scope="col">Available barbers</th>
-                <th scope="col">Rate ($)</th>
-                <th scope="col">Appointment Date</th>
-                <th scope="col">Days Until Due Date</th>
-                <th scope="col">Total Price ($)</th>
+                <th scope="col">Selected Barber</th>
+                <th scope="col">Selected Service</th>
+                <th scope="col">Haircut Price ($)</th>
+                <th scope="col">Selected Date</th>
                 <th scope="col" class="p-3"></th>
               </tr>
             </thead>
-            <tbody id="project-display"></tbody>
+            <tbody id="barber-display"></tbody>
           </table>
         </div>
       </section>
@@ -54,21 +52,21 @@
   </main>
 
     <!-- Modal -->
-  <div class="modal fade custom-modal" id="project-modal" tabindex="-1" role="dialog"
-    aria-labelledby="project-modal-form" aria-hidden="true">
+  <div class="modal fade custom-modal" id="barber-modal" tabindex="-1" role="dialog"
+    aria-labelledby="barber-modal-form" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="project-modal-form">Book a New Appointment.</h5>
+          <h5 class="modal-title" id="barber-modal-form">Book a New Appointment.</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form id="project-form">
+        <form id="barber-form">
           <div class="modal-body">
             <div class="form-group">
-              <label for="project-name-input">Available Barbers</label>
-              <select id="project-name-input" class="form-control">
+              <label for="barber-name-input">Available Barbers</label>
+              <select id="barber-name-input" class="form-control">
                <option selected disabled>Pick one...</option>
                 <option value="Eugene (not Available weekends)">Eugene (not Available weekends)</option>
                  <option value="Alex (Available Weekds)">Alex (Available Weekds)</option>
@@ -78,8 +76,8 @@
             </div>
 
             <div class="form-group">
-              <label for="project-type-input">Select Service</label>
-              <select class="form-control" id="project-type-input">
+              <label for="barber-type-input">Select Service</label>
+              <select class="form-control" id="barber-type-input">
                 <option selected disabled>Pick one...</option>
                 <option value="Face Shave (30 min)">Face Shave (30 min)</option>
                 <option value="Haircut (45 min)">Haircut (45 min)</option>
@@ -92,8 +90,8 @@
             </div>
 
             <div class="form-group">
-              <label for="hourly-rate-input">Price ($)</label>
-              <select  id="hourly-rate-input" class="form-control" >
+              <label for="price-rate-input">Price ($)</label>
+              <select  id="price-rate-input" class="form-control" >
                 <option selected disabled>Pick one...</option>
                 <option value="Face Shave ($15)">Face Shave ($15)</option>
                 <option value="Haircut ($50)">Haircut ($50)</option>
@@ -106,8 +104,8 @@
             </div>
 
             <div class="form-group">
-              <label for="due-date-input">Select Date and Time</label>
-              <input type="text" min='1' id="due-date-input" class="form-control" placeholder="When is the project due?"
+              <label for="date-input">Select Date and Time</label>
+              <input type="text" min='1' id="date-input" class="form-control" placeholder="please select a date and time!"
                 required />
             </div>
           </div>
@@ -120,25 +118,8 @@
       </div>
     </div>
   </div>
-
-</div>
-
-  {{#if barbers.length}}
-  <div class="col-md-6 barber-list">
-    <h3>Scheduled Appointments:</h3>
-
-    {{#each barber as |barbers|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/barber/{{barber.id}}">{{barber.barber_name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{barber.id}}">DELETE APPOINTMENT</button>
-      </div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
 </div>
 
 <script src="./js/profile.js"></script>
+<script src="./js/appointment.js"></script>
+

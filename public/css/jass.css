@@ -1,0 +1,81 @@
+/*setting variables*/
+:root{
+    --red: red;
+    --lightblue: lightblue;
+    --lightblue: darkblue;
+    --darkgrey: darkgrey;
+    }
+
+
+    
+    body{
+        font-family: "Fire sans", sans-serif;
+        font-weight: 400;
+        background-color: lightblue;
+        color: lightblue;
+    }
+    
+    header {
+        background-image: url("./images/barbershop.jpg");
+        background: url("./images/barbershop.jpg") no-repeat;
+        background-size: cover;
+        min-height: 30vh;
+        height: 400px;
+        
+        background-attachment: relative;
+        background-position: center; 
+        justify-content: center;
+    }
+    
+    h1,
+    h1,
+    h3,
+    h4,
+    h5,
+    h6{
+        font-weight: var(--red);
+        color: lightblue;
+    }
+    
+    thead{
+        background-color: var(--red);
+        color: lightblue;
+        font-weight: 700;
+    }
+    
+    .recipient-name {
+        cursor: pointer;
+    }
+    .custom-jumbotron,
+    .custom-card .card-header,
+    .custom-card .card-footer,
+    .custom-modal .modal-header,
+    .custom-modal .modal-footer{
+        background-color: lightblue;
+        color: black;
+    }
+    
+    .custom-card .card-body,
+    .cuustom-modal .modal-body {
+        background-color: lightblue;
+        color: black;
+    }
+    
+    .custom-btn {
+        background: lightblue;
+        color: lightblue;
+    }
+    
+    .custom-btn:hover{
+        background-color: lightblue;
+        color: lightblue;
+    }
+    
+    .custom-table tbody{
+        background-color: darkgrey;
+        color: lightblue;
+    }
+    
+    .delete-project-btn{
+        cursor: pointer;
+    }
