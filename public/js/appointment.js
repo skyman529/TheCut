@@ -1,5 +1,4 @@
 // save reference to important DOM elements
-// const timeDisplayEl = $('#barber-display');
 const barberDisplayEl = $('#barber-display');
 const barberModelEl = $('#barber-modal');
 const barberFormEl = $('#barber-form');
@@ -9,7 +8,7 @@ const priceRateInputEl = $('#price-rate-input');
 const dateInputEl = $('#date-input');
 
 
-// handle printing project data to the page
+// handle printing appointment data to the page
 function printAppointmentInfo(selectedBarber, selectedSerice, haircutPrice, selectedDate) {
   const barberRowEl = $('<tr>');
 

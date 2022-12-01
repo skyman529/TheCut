@@ -1,10 +1,9 @@
-
+<!-- loop through each barbers and render appointment details-->
   {{#each barbers as |barber|}}
   <section class="col-12 col-md-8 col-lg-9">
         <div class="table-responsive">
            <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      {{!-- {{{get_emoji}}} --}}
+      <!-- Rander scheduled appointment -->
       <a href="/barber/{{barber.id}}">{{barber.name}}</a>
     </h2>
           <table class="table table-bordered custom-table">

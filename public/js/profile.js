@@ -43,7 +43,3 @@ const newFormHandler = async (event) => {
     .querySelector('.btn')
     .addEventListener('submit', newFormHandler);
   
-  // document
-  //   .querySelector('.profile-list')
-  //   .addEventListener('click', delButtonHandler);
-  
