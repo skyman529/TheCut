@@ -16,7 +16,7 @@ const newFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/profile');
+        document.location.replace('/');
       } else {
         alert('Failed to create a profile');
       }
@@ -43,7 +43,7 @@ const newFormHandler = async (event) => {
     .querySelector('.btn')
     .addEventListener('submit', newFormHandler);
   
-  document
-    .querySelector('.profile-list')
-    .addEventListener('click', delButtonHandler);
+  // document
+  //   .querySelector('.profile-list')
+  //   .addEventListener('click', delButtonHandler);
   
