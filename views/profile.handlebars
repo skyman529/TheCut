@@ -52,7 +52,7 @@
   </main>
 
     <!-- Modal -->
-  <div class="modal fade custom-modal" id="barber-modal" tabindex="-1" role="dialog"
+   <div class="modal fade custom-modal" id="barber-modal" tabindex="-1" role="dialog"
     aria-labelledby="barber-modal-form" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered">
       <div class="modal-content">
@@ -61,7 +61,8 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
-        </div>
+        </div> 
+        <!-- Available barber form-->
         <form id="barber-form">
           <div class="modal-body">
             <div class="form-group">
@@ -74,7 +75,7 @@
                    <option value="Valeryo (Not Available weekends)">Valeryo (Not Available weekends)</option>
               </select>
             </div>
-
+          <!-- Available Service form-->
             <div class="form-group">
               <label for="barber-type-input">Select Service</label>
               <select class="form-control" id="barber-type-input">
@@ -88,7 +89,7 @@
                 <option value="kids cut (45 min)">kids cut (45 min)</option>
               </select>
             </div>
-
+          <!-- Available price form -->
             <div class="form-group">
               <label for="price-rate-input">Price ($)</label>
               <select  id="price-rate-input" class="form-control" >
@@ -102,10 +103,10 @@
                 <option value="kids cut ($30)">kids cut ($30)</option>
               </select>
             </div>
-
+          <!-- Date submission form -->
             <div class="form-group">
               <label for="date-input">Select Date and Time</label>
-              <input type="text" min='1' id="date-input" class="form-control" placeholder="please select a date and time!"
+              <input type="text" id="date-input" class="form-control" placeholder="please enter a date!"
                 required />
             </div>
           </div>

@@ -34,7 +34,7 @@
     h5,
     h6{
         font-weight: var(--red);
-        color: lightblue;
+        color:rgb(38, 61, 167);
     }
     
     thead{
