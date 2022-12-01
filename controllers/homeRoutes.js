@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Barber, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   try {
     // Get all babers and JOIN with user data
     const barberData = await Barber.findAll({

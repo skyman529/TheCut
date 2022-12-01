@@ -1,14 +1,15 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
   
-    const barberName = document.querySelector('#barber-name').value.trim();
-    const haircutPrice = document.querySelector('#haircut-price').value.trim();
-    const haircutType = document.querySelector('#haircut-type').value.trim();
+    const availableBarbers = document.querySelector('#barber-name-input').value;
+    const selectService = document.querySelector('#barber-type-input').value;
+    const price = document.querySelector('#price-rate-input').value;
+    const selectTimeAndDate = document.querySelector('#date-input').value;
   
-    if (barberName && haircutPrice && haircutType) {
+    if (availableBarbers && selectService && price && selectTimeAndDate) {
       const response = await fetch(`/api/barbers`, {
         method: 'POST',
-        body: JSON.stringify({ barberName, haircutPrice, haircutType}),
+        body: JSON.stringify({ available_barbers: availableBarbers, select_service: selectService, price: price, select_data: selectTimeAndDate }),
         headers: {
           'Content-Type': 'application/json',
         },
@@ -17,7 +18,7 @@ const newFormHandler = async (event) => {
       if (response.ok) {
         document.location.replace('/profile');
       } else {
-        alert('Failed to create an appointment');
+        alert('Failed to create a profile');
       }
     }
   };
@@ -26,23 +27,23 @@ const newFormHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
   
-      const response = await fetch(`/api/barbers/${id}`, {
+      const response = await fetch(`/api/profile/${id}`, {
         method: 'DELETE',
       });
   
       if (response.ok) {
         document.location.replace('/profile');
       } else {
-        alert('Failed to delete an appointment');
+        alert('Failed to delete profile');
       }
     }
   };
   
   document
-    .querySelector('.new-barber-form')
+    .querySelector('.btn')
     .addEventListener('submit', newFormHandler);
   
   document
-    .querySelector('.barber-list')
+    .querySelector('.profile-list')
     .addEventListener('click', delButtonHandler);
   

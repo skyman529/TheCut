@@ -1,27 +1,30 @@
 [
     {
-      "barber_name": "Eugene",
-      "haircut_type": "Bold with a beard Trim.",
-      "haircut_price": 60
-    },
-    {
-     
-        "barber_name": "Skyler",
-        "haircut_type:": "low fade.",
-        "haircut_price": 35
-    },
-    {
-      
-        "barber_name": "Valeryo",
-        "haircut_type": "Side taper with beard treatment.",
-        "haircut_price": 65
+        "available_barbers": "Eugene (not Available weekends)",
+        "select_service": "Haircut/Beard (1 hr)",
+        "price": "Haircut/Beard ($60)",
+        "select_data": "11/30/2022"
     },
 
     {
-      
-        "barber_name": "Alex",
-        "haircut_type": "High fade with line up",
-        "haircut_price": 50
+     
+        "available_barbers": "Alex (Available Weekds)",
+        "select_service": "kids cut (45 min)",
+        "price": "kids cut ($30)",
+        "select_data": "12/1/2022"
+    },
+    {
+        "available_barbers": "Skyler (Available weekends)",
+        "select_service": "Supreme (1 hr)",
+        "price":"Supreme ($65)",
+        "select_data": "12/8/2022"
+    },
+
+    {
+        "available_barbers": "Valeryo (Not Available weekends)",
+        "select_service": "Eyebros (10 min)",
+        "price": "Eyebros ($10)",
+        "select_data": "12/9/2022"
     }
   ]
   

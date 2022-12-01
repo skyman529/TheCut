@@ -1,54 +1,126 @@
+
 <div class="row">
   <div class="col-auto">
     <h2>Welcome, {{name}}!</h2>
   </div>
 </div>
 
-<div class="row mt-4">
-  <div class="col-md-6">
-    <h3>Book a New Appointment:</h3>
-    <p>Please Select The Following Available Barbers To book your next haircut Appointment</p>
-  <ol>
-  <li>Eugene</li>
-  <li>Alex</li>
-  <li>Skyler</li>
-  <li>Valeryo</li>
-</ol>  
-    <form class="form new-barber-form">
-      <div class="form-group">
-        <label for="barber-name">Barber's name:</label>
-        <input class="form-input" type="text" id="barber-name" name="barber-name" />
-      </div>
-      <div class="form-group">
-        <label for="haircut-price">Hair Cut price ($):</label>
-        <input class="form-input" type="number" id="haircut-price" name="haircut-price" />
-      </div>
-      <div class="form-group">
-        <label for="haircut-type">Type of a haircut you want:</label>
-        <textarea class="form-input" id="haircut-type" name="haircut-type"></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">book</button>
-      </div>
-    </form>
-  </div>
+  <main class="container-fluid">
+    <div class="row">
+      <section class="col-12 col-md-4 col-lg-3">
+        <div class="card custom-card">
+          <h3 class="card-header">
+            Schedule your next hair cut Appointment
+          </h3>
+          <div class="card-body">
+            <div class="card-text">
+              Click the button below to open a form and provide information for the following:
+            </div>
+          </div>
 
-  {{#if barbers.length}}
-  <div class="col-md-6 barber-list">
-    <h3>Scheduled Appointments:</h3>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Available Barbers</li>
+            <li class="list-group-item">Available Service</li>
+            <li class="list-group-item">Price per Haircut</li>
+            <li class="list-group-item">Select Time and Date</li>
+          </ul>
 
-    {{#each barber as |barbers|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/barber/{{barber.id}}">{{barber.barber_name}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{barber.id}}">DELETE APPOINTMENT</button>
+             <div class="card-footer">
+            <button class="btn btn-block custom-btn" data-toggle="modal" data-target="#barber-modal">Schedule Appoint</button>
+          </div>
+        </div>
+      </section>
+
+      
+      <section class="col-12 col-md-8 col-lg-9">
+        <div class="table-responsive">
+          <table class="table table-bordered custom-table">
+            <thead>
+              <tr>
+                <th scope="col">Selected Barber</th>
+                <th scope="col">Selected Service</th>
+                <th scope="col">Haircut Price ($)</th>
+                <th scope="col">Selected Date</th>
+                <th scope="col" class="p-3"></th>
+              </tr>
+            </thead>
+            <tbody id="barber-display"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+    <!-- Modal -->
+   <div class="modal fade custom-modal" id="barber-modal" tabindex="-1" role="dialog"
+    aria-labelledby="barber-modal-form" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="barber-modal-form">Book a New Appointment.</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div> 
+        <!-- Available barber form-->
+        <form id="barber-form">
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="barber-name-input">Available Barbers</label>
+              <select id="barber-name-input" class="form-control">
+               <option selected disabled>Pick one...</option>
+                <option value="Eugene (not Available weekends)">Eugene (not Available weekends)</option>
+                 <option value="Alex (Available Weekds)">Alex (Available Weekds)</option>
+                  <option value="Skyler (Available weekends)">Skyler (Available weekends)</option>
+                   <option value="Valeryo (Not Available weekends)">Valeryo (Not Available weekends)</option>
+              </select>
+            </div>
+          <!-- Available Service form-->
+            <div class="form-group">
+              <label for="barber-type-input">Select Service</label>
+              <select class="form-control" id="barber-type-input">
+                <option selected disabled>Pick one...</option>
+                <option value="Face Shave (30 min)">Face Shave (30 min)</option>
+                <option value="Haircut (45 min)">Haircut (45 min)</option>
+                <option value="Haircut/Beard (1 hr)">Haircut/Beard (1 hr)</option>
+                <option value="Supreme (1 hr)">Supreme (1 hr)</option>
+                <option value="Eyebros (10 min)">Eyebrows (10 min)</option>
+                <option value="haircut W Desgin (1 hr)">haircut W Desgin (1 hr)</option>
+                <option value="kids cut (45 min)">kids cut (45 min)</option>
+              </select>
+            </div>
+          <!-- Available price form -->
+            <div class="form-group">
+              <label for="price-rate-input">Price ($)</label>
+              <select  id="price-rate-input" class="form-control" >
+                <option selected disabled>Pick one...</option>
+                <option value="Face Shave ($15)">Face Shave ($15)</option>
+                <option value="Haircut ($50)">Haircut ($50)</option>
+                <option value="Haircut/Beard ($60)">Haircut/Beard ($60)</option>
+                <option value="Supreme ($65)">Supreme ($65)</option>
+                <option value="Eyebrows ($10)">Eyebrows ($10)</option>
+                <option value="haircut W Desgin ($60)">haircut W Desgin ($60)</option>
+                <option value="kids cut ($30)">kids cut ($30)</option>
+              </select>
+            </div>
+          <!-- Date submission form -->
+            <div class="form-group">
+              <label for="date-input">Select Date and Time</label>
+              <input type="text" id="date-input" class="form-control" placeholder="please enter a date!"
+                required />
+            </div>
+          </div>
+      
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn custom-btn">Submit Appointment Info</button>
+          </div>
+        </form>
       </div>
     </div>
-    {{/each}}
   </div>
-  {{/if}}
 </div>
 
 <script src="./js/profile.js"></script>
+<script src="./js/appointment.js"></script>
+
