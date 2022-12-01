@@ -39,6 +39,8 @@ undefined
 ## Screenshot
 
 The following image shows the web application's appearance and functionality:
+![Screenshot welcome](https://user-images.githubusercontent.com/110436164/204966790-375e7561-1c1a-4d56-b840-12b5a8c7c84e.png)
+
 
 
 ## Contributing
