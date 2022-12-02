@@ -15,6 +15,14 @@ WHEN I click hairstyles
 THEN I am presented with different hairstyles to choose from
 WHEN I request appointments
 THEN the new appointment request I have entered is saved
+
+## Link To Deployed Application 
+https://thecut.herokuapp.com/login
+
+## Mock-Up
+
+![Screenshot of my portfolio](./images/mock-up.png)
+
   
 ## Table of Contents
   * [Installation](#installation)
